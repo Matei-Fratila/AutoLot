@@ -19,8 +19,4 @@
     <ProjectReference Include="..\AutoLot.Models\AutoLot.Models.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Repos\" />
-  </ItemGroup>
-
 </Project>
