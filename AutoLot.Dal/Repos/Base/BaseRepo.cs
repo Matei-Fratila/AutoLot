@@ -61,7 +61,7 @@ public abstract class BaseRepo<T> : BaseViewRepo<T>, IBaseRepo<T>
         return persist ? SaveChanges() : 0;
     }
 
-    public int DeleteRange(IEnumerable<T> entities, bool persist = true)
+    public virtual int DeleteRange(IEnumerable<T> entities, bool persist = true)
     {
         Table.RemoveRange(entities);
         return persist ? SaveChanges() : 0;

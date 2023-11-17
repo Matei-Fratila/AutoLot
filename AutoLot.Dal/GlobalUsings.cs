@@ -18,3 +18,4 @@ global using AutoLot.Models.ViewModels;
 global using AutoLot.Models.ViewModels.Configuration;
 global using AutoLot.Models.ViewModels.Interfaces;
 global using AutoLot.Dal.Repos.Base;
+global using AutoLot.Dal.Repos.Interfaces;

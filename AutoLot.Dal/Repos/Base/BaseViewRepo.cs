@@ -48,9 +48,9 @@ public abstract class BaseViewRepo<T> : IBaseViewRepo<T>
         _isDisposed = true;
     }
 
-    public IEnumerable<T> ExecuteSqlString(string sql) => Table.FromSqlRaw(sql);
+    public virtual IEnumerable<T> ExecuteSqlString(string sql) => Table.FromSqlRaw(sql);
 
-    public IEnumerable<T> GetAll() => Table.AsQueryable();
+    public virtual IEnumerable<T> GetAll() => Table.AsQueryable();
 
-    public IEnumerable<T> GetAllIgnoreQueryFilters() => Table.AsQueryable().IgnoreQueryFilters();
+    public virtual IEnumerable<T> GetAllIgnoreQueryFilters() => Table.AsQueryable().IgnoreQueryFilters();
 }
