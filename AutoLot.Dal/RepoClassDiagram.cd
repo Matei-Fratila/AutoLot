@@ -1,0 +1,184 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="AutoLot.Dal.Repos.Base.BaseRepo&lt;T&gt;" Collapsed="true">
+    <Position X="21" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAYAAAAAAAACAEAAAAAAIAECCAEIAAggAAAAAAIEAIA=</HashCode>
+      <FileName>Repos\Base\BaseRepo.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="AutoLot.Dal.Repos.Base.BaseViewRepo&lt;T&gt;" Collapsed="true">
+    <Position X="19.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAiAAAAAAAAAARAKAABAAAAAAAgAAAAAAAAA=</HashCode>
+      <FileName>Repos\Base\BaseViewRepo.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="AutoLot.Dal.Repos.Base.TemporalTableBaseRepo&lt;T&gt;" Collapsed="true">
+    <Position X="22" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABBAAAAAAQAAAAAEABAAAAAAAAACAAAgAAAAA=</HashCode>
+      <FileName>Repos\Base\TemporalTableBaseRepo.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="AutoLot.Dal.Repos.CarDriverRepo" Collapsed="true">
+    <Position X="17.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAIAAAAIAAAAAgAAAAEAAAA=</HashCode>
+      <FileName>Repos\CarDriverRepo.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="AutoLot.Dal.Repos.CarRepo" Collapsed="true">
+    <Position X="19.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIAAAAAAAAAIAAAAIAAAAAgAAAAEAQAA=</HashCode>
+      <FileName>Repos\CarRepo.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="AutoLot.Dal.Repos.CreditRiskRepo" Collapsed="true">
+    <Position X="15.25" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repos\CreditRiskRepo.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="AutoLot.Dal.Repos.CustomerOrderViewModelRepo" Collapsed="true">
+    <Position X="10.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repos\CustomerOrderViewModelRepo.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="AutoLot.Dal.Repos.CustomerRepo" Collapsed="true">
+    <Position X="28.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAgAAAAAAAAA=</HashCode>
+      <FileName>Repos\CustomerRepo.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="AutoLot.Dal.Repos.DriverRepo" Collapsed="true">
+    <Position X="13" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAABAAAAAAAAAAAAIAAAAAAAAAAgAAAAAAAAA=</HashCode>
+      <FileName>Repos\DriverRepo.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="AutoLot.Dal.Repos.MakeRepo" Collapsed="true">
+    <Position X="22" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAgAAAAEAAAA=</HashCode>
+      <FileName>Repos\MakeRepo.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="AutoLot.Dal.Repos.OrderRepo" Collapsed="true">
+    <Position X="24.25" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repos\OrderRepo.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="AutoLot.Dal.Repos.RadioRepo" Collapsed="true">
+    <Position X="26.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repos\RadioRepo.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Interface Name="AutoLot.Dal.Repos.Interfaces.ICarDriverRepo" Collapsed="true">
+    <Position X="15.25" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repos\Interfaces\ICarDriverRepo.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="AutoLot.Dal.Repos.Interfaces.ICarRepo" Collapsed="true">
+    <Position X="17.5" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAAAQAA=</HashCode>
+      <FileName>Repos\Interfaces\ICarRepo.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="AutoLot.Dal.Repos.Interfaces.ICreditRiskRepo" Collapsed="true">
+    <Position X="13" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repos\Interfaces\ICreditRiskRepo.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="AutoLot.Dal.Repos.Interfaces.ICustomerOrderViewModelRepo" Collapsed="true">
+    <Position X="28.75" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repos\Interfaces\ICustomerOrderViewModelRepo.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="AutoLot.Dal.Repos.Interfaces.ICustomerRepo" Collapsed="true">
+    <Position X="26.5" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repos\Interfaces\ICustomerRepo.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="AutoLot.Dal.Repos.Interfaces.IDriverRepo" Collapsed="true">
+    <Position X="10.75" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repos\Interfaces\IDriverRepo.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="AutoLot.Dal.Repos.Interfaces.IMakeRepo" Collapsed="true">
+    <Position X="19.75" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repos\Interfaces\IMakeRepo.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="AutoLot.Dal.Repos.Interfaces.IOrderRepo" Collapsed="true">
+    <Position X="22" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repos\Interfaces\IOrderRepo.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="AutoLot.Dal.Repos.Interfaces.IRadioRepo" Collapsed="true">
+    <Position X="24.25" Y="10.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Repos\Interfaces\IRadioRepo.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="AutoLot.Dal.Repos.Base.IBaseRepo&lt;T&gt;" Collapsed="true">
+    <Position X="18.75" Y="8" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gAYAAAAAAAACAAAAAAAAIAECCAEIAAggAAAAAAIEAIA=</HashCode>
+      <FileName>Repos\Base\IBaseRepo.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="AutoLot.Dal.Repos.Base.IBaseViewRepo&lt;T&gt;" Collapsed="true">
+    <Position X="19.75" Y="6.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAgAAAAAAAAAAAAIAABAAAAAAAgAAAAAAAAA=</HashCode>
+      <FileName>Repos\Base\IBaseViewRepo.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="AutoLot.Dal.Repos.Base.ITemporalTableBaseRepo&lt;T&gt;" Collapsed="true">
+    <Position X="19.75" Y="9.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAABBAAAAAAAAAAAAAABAAAAAAAAACAAAgAAAAA=</HashCode>
+      <FileName>Repos\Base\ITemporalTableBaseRepo.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
