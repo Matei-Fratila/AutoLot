@@ -1,4 +1,5 @@
 ﻿
+
 namespace AutoLot.Dal.Repos.Base;
 public abstract class BaseViewRepo<T> : IBaseViewRepo<T> 
     where T : class, new()

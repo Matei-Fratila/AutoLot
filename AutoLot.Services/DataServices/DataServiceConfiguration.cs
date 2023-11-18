@@ -16,4 +16,19 @@ public static class DataServiceConfiguration
         services.AddScoped<IRadioRepo, RadioRepo>();
         return services;
     }
+
+    public static IServiceCollection AddDataServices(this IServiceCollection services, ConfigurationManager config)
+    {
+        if (config.GetValue<bool>("UseApi"))
+        {
+            services.AddScoped<ICarDataService, CarApiDataService>();
+            services.AddScoped<IMakeDataService, MakeApiDataService>();
+        }
+        else
+        {
+            services.AddScoped<ICarDataService, CarDalDataService>();
+            services.AddScoped<IMakeDataService, MakeDalDataService>();
+        }
+        return services;
+    }
 }

@@ -15,3 +15,8 @@ global using Serilog.Events;
 global using Serilog.Sinks.MSSqlServer;
 global using System.Data;
 global using System.Runtime.CompilerServices;
+global using AutoLot.Services.DataServices.Interfaces;
+global using AutoLot.Services.DataServices.Dal;
+global using AutoLot.Services.DataServices.Dal.Base;
+global using AutoLot.Services.DataServices.Api;
+global using AutoLot.Services.DataServices.Api.Base;

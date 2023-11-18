@@ -1,6 +1,7 @@
 ﻿
+
 namespace AutoLot.Dal.Repos.Base;
-public abstract class BaseRepo<T> : BaseViewRepo<T>, IBaseRepo<T> 
+public abstract class BaseRepo<T> : BaseViewRepo<T>, IBaseRepo<T>
     where T : BaseEntity, new()
 {
     protected BaseRepo(ApplicationDbContext context) : base(context) { }
@@ -11,6 +12,24 @@ public abstract class BaseRepo<T> : BaseViewRepo<T>, IBaseRepo<T>
         try
         {
             return Context.SaveChanges();
+        }
+        catch (CustomException ex)
+        {
+            //Should handle intelligently - already logged
+            throw;
+        }
+        catch (Exception ex)
+        {
+            //Should log and handle intelligently
+            throw new CustomException("An error occurred updating the database", ex);
+        }
+    }
+
+    public async Task<int> SaveChangesAsync()
+    {
+        try
+        {
+            return await Context.SaveChangesAsync();
         }
         catch (CustomException ex)
         {
@@ -67,15 +86,44 @@ public abstract class BaseRepo<T> : BaseViewRepo<T>, IBaseRepo<T>
         return persist ? SaveChanges() : 0;
     }
 
-    public virtual T Find(int? id) 
+    public virtual T Find(int? id)
         => Table.Find(id);
 
-    public virtual T FindAsNoTracking(int id) 
+    public virtual T FindAsNoTracking(int id)
         => Table.AsNoTrackingWithIdentityResolution().FirstOrDefault(x => x.Id == id);
 
-    public virtual T FindIgnoreQueryFilters(int id) 
+    public virtual T FindIgnoreQueryFilters(int id)
         => Table.IgnoreQueryFilters().FirstOrDefault(x => x.Id == id);
 
     public virtual void ExecuteParameterizedQuery(string sql, object[] sqlParametersObjects)
     => Context.Database.ExecuteSqlRaw(sql, sqlParametersObjects);
+
+    public virtual async Task<T> FindAsync(int? id)
+        => await Table.FindAsync(id);
+
+    public virtual async Task<T> AddAsync(T entity, bool persist = true)
+    {
+        Table.Add(entity);
+        if (persist)
+        {
+            await SaveChangesAsync();
+        }
+        return entity;
+    }
+
+    public virtual async Task<T> UpdateAsync(T entity, bool persist = true)
+    {
+        Table.Update(entity);
+        if (persist)
+        {
+            await SaveChangesAsync();
+        }
+        return entity;
+    }
+
+    public virtual async Task<int> DeleteAsync(T entity, bool persist = true)
+    {
+        Table.Remove(entity);
+        return persist ? await SaveChangesAsync() : 0;
+    }
 }
