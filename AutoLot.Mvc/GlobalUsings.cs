@@ -9,3 +9,4 @@ global using Microsoft.Extensions.Options;
 global using AutoLot.Services.ApiWrapper.Configuration;
 global using AutoLot.Services.Logging.Configuration;
 global using AutoLot.Services.Logging.Interfaces;
+global using AutoLot.Services.Utilities;
