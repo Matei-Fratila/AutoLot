@@ -12,9 +12,10 @@ public class HomeController : Controller
         _logger = logger;
     }
 
-    public IActionResult Index()
+    public IActionResult Index([FromServices] IOptionsMonitor<DealerInfo> dealerMonitor)
     {
-        return View();
+        var vm = dealerMonitor.CurrentValue;
+        return View(vm);
     }
 
     public IActionResult Privacy()

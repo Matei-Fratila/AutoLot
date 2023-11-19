@@ -8,7 +8,9 @@ builder.Services.AddSqlServer<ApplicationDbContext>(connectionString, options =>
 {
     options.EnableRetryOnFailure().CommandTimeout(60);
 });
+
 builder.Services.AddRepositories();
+builder.Services.Configure<DealerInfo>(builder.Configuration.GetSection(nameof(DealerInfo)));
 builder.Services.AddDataServices(builder.Configuration);
 
 var app = builder.Build();
