@@ -1,6 +1,4 @@
-﻿using AutoLot.Dal.Repos.Interfaces;
-
-namespace AutoLot.Services.DataServices;
+﻿namespace AutoLot.Services.DataServices;
 public static class DataServiceConfiguration
 {
     public static IServiceCollection AddRepositories(this IServiceCollection services)

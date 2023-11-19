@@ -10,6 +10,7 @@ builder.Services.AddSqlServer<ApplicationDbContext>(connectionString, options =>
 
 builder.Services.AddRepositories();
 builder.Services.Configure<DealerInfo>(builder.Configuration.GetSection(nameof(DealerInfo)));
+builder.Services.ConfigureApiServiceWrapper(builder.Configuration);
 builder.Services.AddDataServices(builder.Configuration);
 
 var app = builder.Build();

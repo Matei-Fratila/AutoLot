@@ -6,3 +6,4 @@ global using AutoLot.Services.DataServices.Api;
 global using AutoLot.Services.DataServices.Dal;
 global using AutoLot.Services.ViewModels;
 global using Microsoft.Extensions.Options;
+global using AutoLot.Services.ApiWrapper.Configuration;

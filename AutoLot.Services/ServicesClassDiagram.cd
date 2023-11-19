@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ClassDiagram MajorVersion="1" MinorVersion="1">
   <Class Name="AutoLot.Services.DataServices.Dal.Base.DalDataServiceBase&lt;TEntity&gt;" Collapsed="true">
-    <Position X="5.75" Y="5" Width="2" />
+    <Position X="4.25" Y="7" Width="2" />
     <TypeIdentifier>
       <HashCode>AAEAAAAAAAAAAAAAAAAAAAEACAAAAAgAACAAAQAAAIA=</HashCode>
       <FileName>DataServices\Dal\Base\DalDataServiceBase.cs</FileName>
@@ -9,7 +9,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="AutoLot.Services.DataServices.Dal.CarDalDataService" Collapsed="true">
-    <Position X="4.5" Y="6.25" Width="1.75" />
+    <Position X="3" Y="8.25" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAABAAAAQAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>DataServices\Dal\CarDalDataService.cs</FileName>
@@ -17,7 +17,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="AutoLot.Services.DataServices.Dal.MakeDalDataService" Collapsed="true">
-    <Position X="7" Y="6.25" Width="1.75" />
+    <Position X="5.5" Y="8.25" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>DataServices\Dal\MakeDalDataService.cs</FileName>
@@ -25,7 +25,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="AutoLot.Services.DataServices.Api.Base.ApiDataServiceBase&lt;TEntity&gt;" Collapsed="true">
-    <Position X="5.75" Y="2" Width="2" />
+    <Position X="4.25" Y="4" Width="2" />
     <TypeIdentifier>
       <HashCode>AAEAAAAAAAAAAAAAAAAAAAEACAAAAAgAAAAAAAAAAIA=</HashCode>
       <FileName>DataServices\Api\Base\ApiDataServiceBase.cs</FileName>
@@ -33,7 +33,7 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="AutoLot.Services.DataServices.Api.MakeApiDataService" Collapsed="true">
-    <Position X="4.5" Y="3.25" Width="1.75" />
+    <Position X="3" Y="5.25" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>DataServices\Api\MakeApiDataService.cs</FileName>
@@ -41,32 +41,77 @@
     <Lollipop Position="0.2" />
   </Class>
   <Class Name="AutoLot.Services.DataServices.Api.CarApiDataService" Collapsed="true">
-    <Position X="7" Y="3.25" Width="1.75" />
+    <Position X="5.5" Y="5.25" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>DataServices\Api\CarApiDataService.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.2" />
   </Class>
+  <Class Name="AutoLot.Services.ApiWrapper.Base.ApiServiceWrapperBase&lt;TEntity&gt;" Collapsed="true">
+    <Position X="9.75" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAACAAAAAAAAAAAAAyAABAIAAAAAACAACAUAQ=</HashCode>
+      <FileName>ApiWrapper\Base\ApiServiceWrapperBase..cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="AutoLot.Services.ApiWrapper.CarApiServiceWrapper" Collapsed="true">
+    <Position X="8.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ApiWrapper\CarApiServiceWrapper.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
+  <Class Name="AutoLot.Services.ApiWrapper.MakeApiServiceWrapper" Collapsed="true">
+    <Position X="10.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ApiWrapper\MakeApiServiceWrapper.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.2" />
+  </Class>
   <Interface Name="AutoLot.Services.DataServices.Interfaces.ICarDataService" Collapsed="true">
-    <Position X="10.5" Y="3.25" Width="1.5" />
+    <Position X="8.5" Y="6.75" Width="1.5" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAABAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>DataServices\Interfaces\ICarDataService.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="AutoLot.Services.DataServices.Interfaces.IDataServiceBase&lt;TEntity&gt;" Collapsed="true">
-    <Position X="11.5" Y="2" Width="2.25" />
+    <Position X="9.5" Y="5.5" Width="2.25" />
     <TypeIdentifier>
       <HashCode>AAEAAAAAAAAAAAAAAAAAAAEACAAAAAgAAAAAAQAAAIA=</HashCode>
       <FileName>DataServices\Interfaces\IDataServiceBase.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Interface Name="AutoLot.Services.DataServices.Interfaces.IMakeDataService" Collapsed="true">
-    <Position X="12.75" Y="3.25" Width="1.75" />
+    <Position X="10.75" Y="6.75" Width="1.75" />
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>DataServices\Interfaces\IMakeDataService.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="AutoLot.Services.ApiWrapper.Interfaces.IApiServiceWrapperBase&lt;TEntity&gt;" Collapsed="true">
+    <Position X="14.25" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAQAAAACAAAAAAAAAAAAAiAABAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ApiWrapper\Interfaces\IApiServiceWrapperBase.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="AutoLot.Services.ApiWrapper.Interfaces.ICarApiServiceWrapper" Collapsed="true">
+    <Position X="13" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ApiWrapper\Interfaces\ICarApiServiceWrapper.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="AutoLot.Services.ApiWrapper.Interfaces.IMakeApiServiceWrapper" Collapsed="true">
+    <Position X="15.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>ApiWrapper\Interfaces\IMakeApiServiceWrapper.cs</FileName>
     </TypeIdentifier>
   </Interface>
   <Font Name="Segoe UI" Size="9" />
