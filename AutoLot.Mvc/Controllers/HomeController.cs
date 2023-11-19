@@ -5,15 +5,16 @@ using System.Diagnostics;
 namespace AutoLot.Mvc.Controllers;
 public class HomeController : Controller
 {
-    private readonly ILogger<HomeController> _logger;
+    private readonly IAppLogging<HomeController> _logger;
 
-    public HomeController(ILogger<HomeController> logger)
+    public HomeController(IAppLogging<HomeController> logger)
     {
         _logger = logger;
     }
 
     public IActionResult Index([FromServices] IOptionsMonitor<DealerInfo> dealerMonitor)
     {
+        _logger.LogAppError("Test error");
         var vm = dealerMonitor.CurrentValue;
         return View(vm);
     }

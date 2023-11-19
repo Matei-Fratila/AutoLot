@@ -1,11 +1,14 @@
 ﻿namespace AutoLot.Services.DataServices.Api.Base;
-public abstract class ApiDataServiceBase<TEntity> : IDataServiceBase<TEntity>
+public abstract class ApiDataServiceBase<TEntity, TDataService> : IDataServiceBase<TEntity>
     where TEntity : BaseEntity, new()
+    where TDataService : IDataServiceBase<TEntity>
 {
+    protected readonly IAppLogging<TDataService> AppLoggingInstance;
     protected readonly IApiServiceWrapperBase<TEntity> ServiceWrapper;
 
-    protected ApiDataServiceBase(IApiServiceWrapperBase<TEntity> serviceWrapperBase)
+    protected ApiDataServiceBase(IAppLogging<TDataService> appLogging, IApiServiceWrapperBase<TEntity> serviceWrapperBase)
     {
+        AppLoggingInstance = appLogging;
         ServiceWrapper = serviceWrapperBase;
     }
 

@@ -1,0 +1,28 @@
+[23-11-19 20:28:01 Error]AutoLot.Mvc:AutoLot.Mvc.Controllers.HomeController
+Message:Test error
+in method Index at D:\Git Repositories\AutoLot\AutoLot.Mvc\Controllers\HomeController.cs:17
+
+[23-11-19 20:29:44 Error]AutoLot.Mvc:AutoLot.Mvc.Controllers.HomeController
+Message:Test error
+in method Index at D:\Git Repositories\AutoLot\AutoLot.Mvc\Controllers\HomeController.cs:17
+
+[23-11-19 20:39:15 Error]AutoLot.Mvc:AutoLot.Mvc.Controllers.HomeController
+Message:Test error
+in method Index at D:\Git Repositories\AutoLot\AutoLot.Mvc\Controllers\HomeController.cs:17
+
+[23-11-19 20:39:33 Error]AutoLot.Mvc:AutoLot.Mvc.Controllers.HomeController
+Message:Test error
+in method Index at D:\Git Repositories\AutoLot\AutoLot.Mvc\Controllers\HomeController.cs:17
+
+[23-11-19 20:39:59 Error]AutoLot.Mvc:AutoLot.Mvc.Controllers.HomeController
+Message:Test error
+in method Index at D:\Git Repositories\AutoLot\AutoLot.Mvc\Controllers\HomeController.cs:17
+
+[23-11-19 20:43:09 Error]AutoLot.Mvc:AutoLot.Mvc.Controllers.HomeController
+Message:Test error
+in method Index at D:\Git Repositories\AutoLot\AutoLot.Mvc\Controllers\HomeController.cs:17
+
+[23-11-19 20:43:54 Error]AutoLot.Mvc:AutoLot.Mvc.Controllers.HomeController
+Message:Test error
+in method Index at D:\Git Repositories\AutoLot\AutoLot.Mvc\Controllers\HomeController.cs:17
+

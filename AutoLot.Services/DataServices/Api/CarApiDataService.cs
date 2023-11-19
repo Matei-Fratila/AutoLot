@@ -1,7 +1,9 @@
 ﻿namespace AutoLot.Services.DataServices.Api;
-public class CarApiDataService : ApiDataServiceBase<Car>, ICarDataService
+public class CarApiDataService : ApiDataServiceBase<Car, CarApiDataService>, ICarDataService
 {
-    public CarApiDataService(ICarApiServiceWrapper serviceWrapper) : base(serviceWrapper)
+    public CarApiDataService(IAppLogging<CarApiDataService> appLogging
+        , ICarApiServiceWrapper serviceWrapper) 
+        : base(appLogging, serviceWrapper)
     {
         
     }

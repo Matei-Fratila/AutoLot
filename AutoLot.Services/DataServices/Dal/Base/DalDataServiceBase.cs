@@ -1,10 +1,14 @@
 ﻿namespace AutoLot.Services.DataServices.Dal.Base;
-public abstract class DalDataServiceBase<TEntity> : IDataServiceBase<TEntity> 
+public abstract class DalDataServiceBase<TEntity, TDataService> : IDataServiceBase<TEntity> 
     where TEntity : BaseEntity, new()
+    where TDataService : IDataServiceBase<TEntity>
 {
+    protected readonly IAppLogging<TDataService> AppLoggingInstance;
     protected readonly IBaseRepo<TEntity> MainRepo;
-    protected DalDataServiceBase(IBaseRepo<TEntity> mainRepo)
+
+    protected DalDataServiceBase(IAppLogging<TDataService> appLogging, IBaseRepo<TEntity> mainRepo)
     {
+        AppLoggingInstance = appLogging;
         MainRepo = mainRepo;
     }
 

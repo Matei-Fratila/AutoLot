@@ -1,5 +1,7 @@
 ﻿namespace AutoLot.Services.DataServices.Dal;
-public class MakeDalDataService : DalDataServiceBase<Make>, IMakeDataService
+public class MakeDalDataService : DalDataServiceBase<Make, MakeDalDataService>, IMakeDataService
 {
-    public MakeDalDataService(IMakeRepo repo) : base(repo) { }
+    public MakeDalDataService(IAppLogging<MakeDalDataService> appLogging
+        , IMakeRepo repo) 
+        : base(appLogging, repo) { }
 }

@@ -1,5 +1,9 @@
 var builder = WebApplication.CreateBuilder(args);
 
+//Configure logging
+builder.ConfigureSerilog();
+builder.Services.RegisterLoggingInterfaces();
+
 // Add services to the container.
 
 builder.Services.AddControllers();
