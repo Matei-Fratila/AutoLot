@@ -41,7 +41,7 @@ public static class LoggingConfiguration
 
         var sqlOptions = new MSSqlServerSinkOptions
         {
-            AutoCreateSqlTable = false,
+            AutoCreateSqlTable = true,
             SchemaName = schema,
             TableName = tableName,
         };
