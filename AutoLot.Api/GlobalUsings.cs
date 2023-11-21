@@ -5,3 +5,5 @@ global using AutoLot.Services.DataServices;
 global using AutoLot.Services.Logging.Configuration;
 global using AutoLot.Services.Logging.Interfaces;
 global using AutoLot.Services.Utilities;
+global using Microsoft.AspNetCore.Mvc;
+global using System.Text.Json.Serialization;
