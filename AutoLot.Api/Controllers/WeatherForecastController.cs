@@ -1,6 +1,6 @@
-using Microsoft.AspNetCore.Mvc;
-
 namespace AutoLot.Api.Controllers;
+
+[ApiVersionNeutral]
 [ApiController]
 [Route("[controller]")]
 public class WeatherForecastController : ControllerBase

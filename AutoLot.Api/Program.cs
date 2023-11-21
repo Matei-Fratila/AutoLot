@@ -1,5 +1,3 @@
-[assembly: ApiController]
-
 var builder = WebApplication.CreateBuilder(args);
 
 //Configure logging
@@ -31,6 +29,7 @@ builder.Services.AddControllers()
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddAutoLotApiVersionConfiguration(new ApiVersion(1, 0));
 builder.Services.AddSwaggerGen();
 
 var connectionString = builder.Configuration.GetConnectionString("AutoLot");

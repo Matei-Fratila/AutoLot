@@ -1,8 +1,23 @@
 ﻿namespace AutoLot.Api.Controllers;
 
+[ApiVersion("0.5", Deprecated = true)]
+[ApiVersion("1.0")]
+[ApiController]
 [Route("api/[controller]")]
 public class ValuesController : ControllerBase
 {
+    /// <summary>
+    /// This is an example Get method returning JSON
+    /// </summary>
+    /// <remarks>This is one of several examples for returning JSON:
+    /// <pre>
+    /// [
+    /// "value1",
+    /// "value2"
+    /// ]
+    /// </pre>
+    /// </remarks>
+    /// <returns>List of strings</returns>
     [HttpGet]
     public IActionResult Get()
     {
