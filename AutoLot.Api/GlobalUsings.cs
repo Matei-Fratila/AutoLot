@@ -14,3 +14,5 @@ global using Swashbuckle.AspNetCore.Annotations;
 global using Swashbuckle.AspNetCore.SwaggerGen;
 global using System.Reflection;
 global using System.Text.Json;
+global using AutoLot.Api.Swagger;
+global using AutoLot.Api.Swagger.Models;

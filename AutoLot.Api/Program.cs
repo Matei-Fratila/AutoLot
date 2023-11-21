@@ -1,3 +1,6 @@
+using Asp.Versioning.ApiExplorer;
+using Microsoft.DotNet.Scaffolding.Shared;
+
 var builder = WebApplication.CreateBuilder(args);
 
 //Configure logging
@@ -25,12 +28,15 @@ builder.Services.AddControllers()
         options.SuppressMapClientErrors = false;
         options.ClientErrorMapping[StatusCodes.Status404NotFound].Link = "https://httpstatuses.com/404";
         options.ClientErrorMapping[StatusCodes.Status404NotFound].Title = "Invalid location";
-    }); 
+    });
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddAutoLotApiVersionConfiguration(new ApiVersion(1, 0));
-builder.Services.AddSwaggerGen();
+builder.Services.AddAndConfigureSwagger(
+    config: builder.Configuration
+    , xmlPathAndFile: Path.Combine(AppContext.BaseDirectory, $"{Assembly.GetExecutingAssembly().GetName().Name}.xml")
+    , addBasicSecurity: true);
 
 var connectionString = builder.Configuration.GetConnectionString("AutoLot");
 builder.Services.AddSqlServer<ApplicationDbContext>(connectionString, options =>
@@ -55,7 +61,17 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseSwagger();
-app.UseSwaggerUI();
+app.UseSwaggerUI(options =>
+{
+    using var scope = app.Services.CreateScope();
+    var versionProvider = scope.ServiceProvider.GetRequiredService<IApiVersionDescriptionProvider>();
+    // build a swagger endpoint for each discovered API version
+    foreach (var description in versionProvider.ApiVersionDescriptions)
+    {
+        options.SwaggerEndpoint($"/swagger/{description.GroupName}/swagger.json",
+        description.GroupName.ToUpperInvariant());
+    }
+});
 
 app.UseHttpsRedirection();
 
