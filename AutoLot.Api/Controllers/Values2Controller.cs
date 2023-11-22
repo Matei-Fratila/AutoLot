@@ -5,6 +5,7 @@
 [ApiController]
 [Route("api/[controller]")]
 [Route("api/v{version:apiVersion}/[controller]")]
+[AllowAnonymous]
 public class Values2Controller : ControllerBase
 {
     [HttpGet]

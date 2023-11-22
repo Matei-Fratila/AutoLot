@@ -26,6 +26,7 @@ public class ValuesController : ControllerBase
     [SwaggerResponse(200, "The execution was successful")]
     [SwaggerResponse(400, "The request was invalid")]
     [SwaggerResponse(401, "Unauthorized access attempted")]
+    [AllowAnonymous]
     public IActionResult Get()
     {
         return Ok(new string[] { "value1", "value2" });

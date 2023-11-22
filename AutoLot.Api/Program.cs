@@ -8,10 +8,11 @@ builder.Services.RegisterLoggingInterfaces();
 
 // Add services to the container.
 
-builder.Services.AddControllers(config =>
-{
-    config.Filters.Add(new CustomExceptionFilterAttribute(builder.Environment));
-})
+builder.Services
+    .AddControllers(config =>
+    {
+        config.Filters.Add(new CustomExceptionFilterAttribute(builder.Environment));
+    })
     .AddJsonOptions(options =>
     {
         options.JsonSerializerOptions.PropertyNamingPolicy = null;
@@ -58,6 +59,10 @@ builder.Services.AddCors(options =>
     });
 });
 
+builder.Services.Configure<SecuritySettings>(builder.Configuration.GetSection(nameof(SecuritySettings)));
+builder.Services.AddAuthentication("BasicAuthentication")
+    .AddScheme<AuthenticationSchemeOptions, BasicAuthenticationHandler>("BasicAuthentication", null);
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -89,8 +94,10 @@ app.UseHttpsRedirection();
 
 app.UseCors("AllowAll");
 
+app.UseAuthentication();
+
 app.UseAuthorization();
 
-app.MapControllers();
+app.MapControllers().RequireAuthorization(); ;
 
 app.Run();
