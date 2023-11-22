@@ -19,6 +19,13 @@ public class ValuesController : ControllerBase
     /// </remarks>
     /// <returns>List of strings</returns>
     [HttpGet]
+    [Produces("application/json")]
+    [ProducesResponseType(StatusCodes.Status200OK)]
+    [ProducesResponseType(StatusCodes.Status400BadRequest)]
+    [ProducesResponseType(StatusCodes.Status401Unauthorized)]
+    [SwaggerResponse(200, "The execution was successful")]
+    [SwaggerResponse(400, "The request was invalid")]
+    [SwaggerResponse(401, "Unauthorized access attempted")]
     public IActionResult Get()
     {
         return Ok(new string[] { "value1", "value2" });
