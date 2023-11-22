@@ -1,5 +1,4 @@
 using Asp.Versioning.ApiExplorer;
-using Microsoft.DotNet.Scaffolding.Shared;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -9,7 +8,10 @@ builder.Services.RegisterLoggingInterfaces();
 
 // Add services to the container.
 
-builder.Services.AddControllers()
+builder.Services.AddControllers(config =>
+{
+    config.Filters.Add(new CustomExceptionFilterAttribute(builder.Environment));
+})
     .AddJsonOptions(options =>
     {
         options.JsonSerializerOptions.PropertyNamingPolicy = null;
