@@ -18,6 +18,27 @@ builder.Services.Configure<DealerInfo>(builder.Configuration.GetSection(nameof(D
 builder.Services.ConfigureApiServiceWrapper(builder.Configuration);
 builder.Services.AddDataServices(builder.Configuration);
 
+if (builder.Environment.IsDevelopment())
+{
+    builder.Services.AddWebOptimizer(false, false);
+    //builder.Services.AddWebOptimizer(options =>
+    //{
+    //    options.MinifyCssFiles("AutoLot.Mvc.styles.css");
+    //    options.MinifyCssFiles("css/site.css");
+    //    options.MinifyJsFiles("js/site.js");
+    //});
+}
+else
+{
+    builder.Services.AddWebOptimizer(options =>
+    {
+        options.MinifyCssFiles("AutoLot.Mvc.styles.css");
+        options.MinifyCssFiles("css/site.css");
+        options.MinifyJsFiles("js/site.js");
+        options.AddJavaScriptBundle("js/validations/validationCode.js", "js/validations/**/*.js");
+    });
+}
+
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.
@@ -40,6 +61,10 @@ else
 }
 
 app.UseHttpsRedirection();
+
+//for bundling and minification
+app.UseWebOptimizer();
+
 app.UseStaticFiles();
 
 app.UseRouting();
