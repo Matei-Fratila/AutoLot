@@ -1,14 +1,15 @@
 ﻿namespace AutoLot.Mvc.Controllers.Base;
-public abstract class BaseCrudController<TEntity, TController> : Controller
-    where TEntity : BaseEntity, new()
+public abstract class BaseCrudWithBindingPropertyController <TEntity, TController> : Controller
+    where TEntity : BaseEntity, new ()
     where TController : class
 {
     protected readonly IAppLogging<TController> AppLoggingInstance;
     protected readonly IDataServiceBase<TEntity> MainDataService;
-    //[BindProperty]
-    //public TEntity Entity { get; set; }
 
-    protected BaseCrudController(IAppLogging<TController> appLoggingInstance, IDataServiceBase<TEntity> mainDataService)
+    [BindProperty]
+    public TEntity Entity { get; set; }
+
+    protected BaseCrudWithBindingPropertyController(IAppLogging<TController> appLoggingInstance, IDataServiceBase<TEntity> mainDataService)
     {
         AppLoggingInstance = appLoggingInstance;
         MainDataService = mainDataService;
@@ -51,15 +52,16 @@ public abstract class BaseCrudController<TEntity, TController> : Controller
 
     [HttpPost]
     [ValidateAntiForgeryToken]
-    public virtual async Task<IActionResult> CreateAsync(TEntity entity)
+    [ActionName("Create")]
+    public virtual async Task<IActionResult> CreatePostAsync()
     {
         if (ModelState.IsValid)
         {
-            await MainDataService.AddAsync(entity);
-            return RedirectToAction(nameof(DetailsAsync).RemoveAsyncSuffix(), new { id = entity.Id });
+            await MainDataService.AddAsync(Entity);
+            return RedirectToAction(nameof(DetailsAsync).RemoveAsyncSuffix(), new { id = Entity.Id });
         }
         ViewData["LookupValues"] = await GetLookupValuesAsync();
-        return View(entity);
+        return View(Entity);
     }
 
     [HttpGet("{id?}")]
@@ -82,20 +84,21 @@ public abstract class BaseCrudController<TEntity, TController> : Controller
 
     [HttpPost("{id}")]
     [ValidateAntiForgeryToken]
-    public virtual async Task<IActionResult> EditAsync(int id, TEntity entity)
+    [ActionName("Edit")]
+    public virtual async Task<IActionResult> EditPostAsync(int id)
     {
-        if (id != entity.Id)
+        if (id != Entity.Id)
         {
             ViewData["Error"] = "Bad Request";
             return View();
         }
         if (ModelState.IsValid)
         {
-            await MainDataService.UpdateAsync(entity);
+            await MainDataService.UpdateAsync(Entity);
             return RedirectToAction(nameof(DetailsAsync).RemoveAsyncSuffix(), new { id });
         }
         ViewData["LookupValues"] = await GetLookupValuesAsync();
-        return View(entity);
+        return View(Entity);
     }
 
     [HttpGet("{id?}")]
@@ -117,16 +120,17 @@ public abstract class BaseCrudController<TEntity, TController> : Controller
 
     [HttpPost("{id}")]
     [ValidateAntiForgeryToken]
-    public virtual async Task<IActionResult> DeleteAsync(int id, TEntity entity)
+    [ActionName("Delete")]
+    public virtual async Task<IActionResult> DeletePostAsync(int id)
     {
-        if (id != entity.Id)
+        if (id != Entity.Id)
         {
             ViewData["Error"] = "Bad Request";
             return View();
         }
         try
         {
-            await MainDataService.DeleteAsync(entity);
+            await MainDataService.DeleteAsync(Entity);
             return RedirectToAction(nameof(IndexAsync).RemoveAsyncSuffix());
         }
         catch (Exception ex)
@@ -134,8 +138,8 @@ public abstract class BaseCrudController<TEntity, TController> : Controller
             ModelState.Clear();
             ModelState.AddModelError(string.Empty, ex.Message);
             MainDataService.ResetChangeTracker();
-            entity = await GetOneEntityAsync(id);
-            return View(entity);
+            Entity = await GetOneEntityAsync(id);
+            return View(Entity);
         }
     }
 }
