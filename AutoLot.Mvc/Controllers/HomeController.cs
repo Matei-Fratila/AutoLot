@@ -1,8 +1,6 @@
-using AutoLot.Mvc.Models;
-using Microsoft.AspNetCore.Mvc;
-using System.Diagnostics;
-
 namespace AutoLot.Mvc.Controllers;
+
+[Route("[controller]/[action]")]
 public class HomeController : Controller
 {
     private readonly IAppLogging<HomeController> _logger;
@@ -12,6 +10,10 @@ public class HomeController : Controller
         _logger = logger;
     }
 
+    [HttpGet]
+    [Route("/")]
+    [Route("/[controller]")]
+    [Route("/[controller]/[action]")]
     public IActionResult Index([FromServices] IOptionsMonitor<DealerInfo> dealerMonitor)
     {
         _logger.LogAppError("Test error");
@@ -19,6 +21,7 @@ public class HomeController : Controller
         return View(vm);
     }
 
+    [HttpGet]
     public IActionResult Privacy()
     {
         return View();

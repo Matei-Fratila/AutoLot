@@ -24,3 +24,4 @@ global using Microsoft.AspNetCore.Mvc.ViewComponents;
 global using Microsoft.AspNetCore.Razor.TagHelpers;
 global using Microsoft.Extensions.DependencyInjection.Extensions;
 global using System.Diagnostics;
+global using AutoLot.Mvc.Controllers.Base;
