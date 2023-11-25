@@ -31,3 +31,7 @@ global using System.Text.Json;
 global using AutoLot.Services.Logging.Settings;
 global using AutoLot.Services.Logging.Interfaces;
 global using AutoLot.Services.Utilities;
+global using System.ComponentModel;
+global using System.ComponentModel.DataAnnotations;
+global using System.Reflection;
+global using AutoLot.Services.Validation;

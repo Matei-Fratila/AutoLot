@@ -40,4 +40,27 @@ public class HomeController : Controller
         car = await dataService.LoadRelatedMakeAsync(car);
         return View(car);
     }
+
+    [HttpGet]
+    public IActionResult Validation()
+    {
+        var vm = new AddToCartViewModel
+        {
+            Id = 1,
+            ItemId = 1,
+            StockQuantity = 2,
+            Quantity = 0
+        };
+        return View(vm);
+    }
+
+    [HttpPost]
+    public IActionResult Validation(AddToCartViewModel viewModel)
+    {
+        if (!ModelState.IsValid)
+        {
+            return View(viewModel);
+        }
+        return RedirectToAction(nameof(Validation));
+    }
 }
