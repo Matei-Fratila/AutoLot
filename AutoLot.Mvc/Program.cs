@@ -18,6 +18,9 @@ builder.Services.Configure<DealerInfo>(builder.Configuration.GetSection(nameof(D
 builder.Services.ConfigureApiServiceWrapper(builder.Configuration);
 builder.Services.AddDataServices(builder.Configuration);
 
+//needed to create custom tag helpers
+builder.Services.TryAddSingleton<IActionContextAccessor, ActionContextAccessor>();
+
 if (builder.Environment.IsDevelopment())
 {
     builder.Services.AddWebOptimizer(false, false);
