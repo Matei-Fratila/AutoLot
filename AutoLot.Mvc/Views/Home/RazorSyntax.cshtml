@@ -74,3 +74,7 @@ This will be bold: @b("Foo")
 The Car named @Model.PetName is a <span style="color:@Model.Color">@Model.Color</span>
 
 <a asp-controller="Cars" asp-action="Details" asp-route-id="@Model.Id">@Model.PetName</a>
+
+@* @Html.DisplayFor(x => x.MakeNavigation);
+@Html.DisplayForModel("../Cars/DisplayTemplates/Car.cshtml"); *@
+@Html.DisplayForModel("../Cars/DisplayTemplates/CarWithColors.cshtml");

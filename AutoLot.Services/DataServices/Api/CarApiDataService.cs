@@ -11,4 +11,9 @@ public class CarApiDataService : ApiDataServiceBase<Car, CarApiDataService>, ICa
     public async Task<IEnumerable<Car>> GetAllByMakeIdAsync(int? makeId)
         => makeId.HasValue ? await ((ICarApiServiceWrapper)ServiceWrapper).GetCatsByMakeAsync(makeId.Value)
             : await GetAllAsync();
+
+    public Task<Car> LoadRelatedMakeAsync(Car car)
+    {
+        throw new NotImplementedException();
+    }
 }

@@ -37,6 +37,7 @@ public class HomeController : Controller
     public async Task<IActionResult> RazorSyntaxAsync([FromServices] ICarDataService dataService)
     {
         var car = await dataService.FindAsync(1);
+        car = await dataService.LoadRelatedMakeAsync(car);
         return View(car);
     }
 }
