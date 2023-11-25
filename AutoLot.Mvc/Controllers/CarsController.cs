@@ -1,4 +1,5 @@
 ﻿namespace AutoLot.Mvc.Controllers;
+
 public class CarsController : BaseCrudController<Car, CarsController>
 {
     private readonly IMakeDataService _lookupDataService;
@@ -24,7 +25,7 @@ public class CarsController : BaseCrudController<Car, CarsController>
     [HttpPost]
     [ActionName("Create")]
     [ValidateAntiForgeryToken]
-    public override async Task<IActionResult> CreateAsync()
+    public async Task<IActionResult> CreateCarAsync()
     {
         var newCar = new Car();
         //var newCar = new Car
@@ -48,6 +49,6 @@ public class CarsController : BaseCrudController<Car, CarsController>
         TryValidateModel(newCar);
         isValid = ModelState.IsValid; //true
         ViewData["MakeId"] = await GetLookupValuesAsync();
-        return View(newCar);
+        return View("Create", newCar);
     }
 }

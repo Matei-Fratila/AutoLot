@@ -1,4 +1,6 @@
 ﻿namespace AutoLot.Mvc.Controllers.Base;
+
+[Route("[controller]/[action]")]
 public abstract class BaseCrudWithBindingPropertyController <TEntity, TController> : Controller
     where TEntity : BaseEntity, new ()
     where TController : class

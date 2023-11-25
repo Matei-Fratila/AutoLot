@@ -1,0 +1,12 @@
+﻿@model Car
+@{
+    ViewData["Title"] = "Create";
+}
+<h1>Create a New Car</h1>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-controller="Cars" asp-action="CreateCar" asp-antiforgery="false">
+        </form>
+    </div>
+</div>
