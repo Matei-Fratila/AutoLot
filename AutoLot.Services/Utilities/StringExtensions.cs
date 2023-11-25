@@ -1,7 +1,7 @@
 ﻿namespace AutoLot.Services.Utilities;
 public static class StringExtensions
 {
-    public static string RemoveController(this string original)
+    public static string RemoveControllerSuffix(this string original)
         => original.Replace("Controller", string.Empty, StringComparison.OrdinalIgnoreCase);
 
     public static string RemoveAsyncSuffix(this string original)

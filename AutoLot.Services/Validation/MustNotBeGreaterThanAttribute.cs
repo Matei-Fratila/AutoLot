@@ -1,7 +1,7 @@
 ﻿namespace AutoLot.Services.Validation;
 
 [AttributeUsage(AttributeTargets.Property, AllowMultiple = true)]
-public class MustNotBeGreaterThanAttribute : ValidationAttribute
+public class MustNotBeGreaterThanAttribute : ValidationAttribute, IClientModelValidator
 {
     readonly string _otherPropertyName;
     string _otherPropertyDisplayName;
@@ -79,5 +79,16 @@ public class MustNotBeGreaterThanAttribute : ValidationAttribute
         return toValidate > toCompare
             ? new ValidationResult(FormatErrorMessage(validationContext.DisplayName))
             : ValidationResult.Success;
+    }
+
+    public void AddValidation(ClientModelValidationContext context)
+    {
+        string propertyDisplayName = context.ModelMetadata.GetDisplayName();
+        var propertyInfo = context.ModelMetadata.ContainerType.GetProperty(_otherPropertyName);
+        SetOtherPropertyName(propertyInfo);
+        string errorMessage = FormatErrorMessage(propertyDisplayName);
+        context.Attributes.Add("data-val-notgreaterthan", errorMessage);
+        context.Attributes.Add("data-val-notgreaterthan-otherpropertyname", _otherPropertyName);
+        context.Attributes.Add("data-val-notgreaterthan-prefix", _prefix);
     }
 }

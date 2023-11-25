@@ -63,4 +63,20 @@ public class HomeController : Controller
         }
         return RedirectToAction(nameof(Validation));
     }
+
+    [HttpGet]
+    public IActionResult GrantConsent()
+    {
+        HttpContext.Features.Get<ITrackingConsentFeature>().GrantConsent();
+        return RedirectToAction(nameof(Index), nameof(HomeController).RemoveControllerSuffix(),
+        new { area = "" });
+    }
+
+    [HttpGet]
+    public IActionResult WithdrawConsent()
+    {
+        HttpContext.Features.Get<ITrackingConsentFeature>().WithdrawConsent();
+        return RedirectToAction(nameof(Index), nameof(HomeController).RemoveControllerSuffix(),
+        new { area = "" });
+    }
 }

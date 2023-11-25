@@ -35,3 +35,4 @@ global using System.ComponentModel;
 global using System.ComponentModel.DataAnnotations;
 global using System.Reflection;
 global using AutoLot.Services.Validation;
+global using Microsoft.AspNetCore.Mvc.ModelBinding.Validation;

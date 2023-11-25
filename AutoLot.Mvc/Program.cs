@@ -38,9 +38,23 @@ else
         options.MinifyCssFiles("AutoLot.Mvc.styles.css");
         options.MinifyCssFiles("css/site.css");
         options.MinifyJsFiles("js/site.js");
-        options.AddJavaScriptBundle("js/validations/validationCode.js", "js/validations/**/*.js");
+        options.AddJavaScriptBundle("js/validationCode.js",
+            "js/validations/validators.js", "js/validations/errorFormatting.js");
     });
 }
+
+builder.Services.Configure<CookiePolicyOptions>(options =>
+{
+    // This lambda determines whether user consent for non-essential cookies is
+    // needed for a given request.
+    options.CheckConsentNeeded = context => true;
+    options.MinimumSameSitePolicy = SameSiteMode.None;
+});
+
+// The TempData provider cookie is not essential. Make it essential
+// so TempData is functional when tracking is disabled.
+builder.Services.Configure<CookieTempDataProviderOptions>(options => { options.Cookie.IsEssential = true; });
+builder.Services.AddSession(options => { options.Cookie.IsEssential = true; });
 
 var app = builder.Build();
 
@@ -70,11 +84,14 @@ app.UseWebOptimizer();
 
 app.UseStaticFiles();
 
+app.UseCookiePolicy();
+
 app.UseRouting();
 
 app.UseAuthorization();
 
 app.MapControllers();
+
 app.MapControllerRoute(
     name: "AdminArea",
     pattern: "{area=Admin}/{controller=Home}/{action=Index}/{id?}");
